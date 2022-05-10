@@ -15,10 +15,20 @@ app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
 app.set('views', 'views');
 
-// render the application html
+// render the application html for the homepage
 app.get('/', function(req, res) {
     res.render("components/index.html")
 });
+
+// render the application html for the services
+app.get('/services', function(req, res) {
+    res.render("components/services.html")
+})
+
+// render the application html for the contact 
+app.get('/contact', function(req, res) {
+    res.render("components/contact.html")
+})
 
 // Render application with port number
 var server = app.listen(port, function() {
